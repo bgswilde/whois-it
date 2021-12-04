@@ -5,6 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "node server/server.js",
+    "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
+    "install": "cd server && npm i && cd ../client && npm i",
+    "build": "cd client && npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -12,11 +15,14 @@
     "url": "git+https://github.com/bgswilde/whois-it.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Brian Wilde",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/bgswilde/whois-it/issues"
   },
   "homepage": "https://github.com/bgswilde/whois-it#readme",
-  "dependencies": {}
+  "dependencies": {},
+  "devDependencies": {
+    "concurrently": "^6.4.0"
+  }
 }
