@@ -2,15 +2,17 @@ import React from "react";
 import './index.css';
 import { Form, Col, Row, Button } from 'react-bootstrap';
 
-function SearchBar() {
+function SearchBar(props) {
+  const {handleClick} = props;
+
   return (
 
-      <Form>
+      <Form onSubmit={handleClick}>
         <Form.Group>
-          <Row className="flex-row">
+          <Row className="flex-row" >
             <Col xs="12" md="8" className="mt-1">
               <Form.Control
-                name='domainOrIP'
+                name='searchTerm'
                 type='text'
                 size='lg'
                 placeholder='Search by Domain Name or IP Address'
