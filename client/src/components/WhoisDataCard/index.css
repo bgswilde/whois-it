@@ -1,0 +1,15 @@
+.results {
+  margin-top: 15px; 
+  padding-top: 20px;
+  border-top: 4px solid #fea85d;
+}
+.results h5 {
+  margin-bottom: 20px;
+  text-align: left;
+  margin-left: 5%;
+}
+
+.results p {
+  text-align: left;
+  margin-left: 5%;
+}

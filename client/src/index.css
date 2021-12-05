@@ -4,10 +4,24 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   width: 100%;
-  background: linear-gradient(-45deg, #ffb54b, #d14ef5);
+  background: linear-gradient(-45deg, #f8a52e, #ca2ce1);
   background-size: 200% 200%;
   position: relative;
   animation: change 30s ease-in-out infinite;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.content-wrap {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 code {
