@@ -1,3 +1,4 @@
 build:
   docker:
-    web: docker-compose-prod.yml
+    web: Dockerfile
+
