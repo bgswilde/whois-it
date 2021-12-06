@@ -12,3 +12,8 @@
   height: 80%;
   margin: auto;
 }
+
+.content-spacing {
+  justify-self: center;
+  margin: 20px auto;
+}

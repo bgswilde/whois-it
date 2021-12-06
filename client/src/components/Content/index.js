@@ -7,7 +7,7 @@ import Loading from '../Loading';
 import axios from 'axios';
 
 function Content() {
-  const [domainOrIP, setDomainOrIP] = useState("");
+  const [domainOrIP, setDomainOrIP] = useState(null);
   const [whoisData, setWhoisData] = useState({
     loading: false,
     data: null,
@@ -39,32 +39,40 @@ function Content() {
           data: response.data.whoisData,
           error: false
         })
-        console.log(whoisData.data);
+      })
+      .catch(error => {
+        setWhoisData({
+          loading: false,
+          data: null,
+          error: true
+        })
       })
   }, [domainOrIP]);
 
   let content = null
 
-  // if (whoisData.data) {
-  //   content = 
-  //   <WhoisDataCard
-  //     whoisData={whoisData.data}
-  //   />
-  // }
+  if (whoisData.data) {
+    content = 
+    <WhoisDataCard
+      whoisData={whoisData.data}
+      domainOrIP={domainOrIP}
+    />
+  }
 
-  // if (error) {
-  //   content =
-  //   <div>
-  //     <h3>No data response, please try again or search a different Domain or IP.</h3>
-  //   </div>
-  // }
+  if (whoisData.error) {
+    content =
+    <div className="content-spacing">
+      <h3>{`${whoisData.error}`}</h3>
+    </div>
+  }
 
-  // if (loading) {
-  //   content =
-  //   <div>
-  //     <h4>...loading...</h4>
-  //   </div>
-  // }
+  if (whoisData.loading) {
+    content =
+    <div className="content-spacing">
+      <Loading />
+    </div>
+  }
+
   return (
     <Container className="center">
       <Col xs="12" lg="9" className="content-box">
@@ -77,7 +85,7 @@ function Content() {
           />
         </Row>
         <Row>
-          <WhoisDataCard />
+          {content}
         </Row>
       </Col>
     </Container>

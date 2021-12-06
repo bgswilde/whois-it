@@ -19,3 +19,9 @@
   border-color: rgb(86, 14, 159);
   box-shadow: 0 0 2px 0.2rem  rgba(92, 2, 131, 0.166)
 }
+
+.submit-btn:focus {
+  background-color: #ca2ce1;
+  border-color: rgb(86, 14, 159);
+  width: 100%;
+}
