@@ -1,0 +1,21 @@
+version: "3"
+services:
+  react-frontend:
+    image: react-frontend-production
+    restart: unless-stopped
+    stdin_open: true
+    ports:
+      - "80:80"
+      - "443:443"
+    networks:
+      - whois-app
+  node-api:
+    image: node-api-production
+    restart: unless-stopped
+    ports: 
+      - "3001:3001"
+    networks:
+      - whois-app
+networks:
+  whois-app:
+    driver: bridge
