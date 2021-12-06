@@ -1,0 +1,20 @@
+version: "3"
+services:
+  react-frontend:
+    image: react-frontend
+    build: ./client/
+    stdin_open: true
+    ports:
+      -  "3000:3000"
+    networks:
+      - whois-app
+  node-api:
+    image: node-api
+    build: ./server/
+    ports: 
+      - "3001:3001"
+    networks:
+      - whois-app
+networks:
+  whois-app:
+    driver: bridge
